@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!--link rel="icon" href="../../../../favicon.ico"-->
+
+		<title>Customer-Representative Panel</title>
+
+		<!-- Bootstrap core CSS -->
+		<!--link href="/305_Website/css/bootstrap.css" rel="stylesheet"-->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			body {
+				padding-top: 6rem;
+			}
+
+			table {
+				border-collapse: collapse;
+			}
+			table, th, td {
+				border: 1px solid black;
+				padding: 5px;
+			}
+
+			.inverted{
+				filter: invert(100%);
+			}
+			.backgroundInvert{
+				background-color:black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button-->
+					<a class="navbar-brand" href="./../index.html">Triptopia</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#" onClick="$('#largeOuterContainer').toggleClass('inverted');$('body').toggleClass('backgroundInvert');">Toggle Night Mode</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+
+		<div class="container" id="largeOuterContainer">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 col-sm-10 col-sm-offset-1">
+					<div class="panel-group" id="accordion">
+<!--*** MAKE ROUND TRIP RESERVATION**************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#makeRoundTripReservation">Make Round-Trip Reservation</a>
+								</h4>
+							</div>
+							<div id="makeRoundTripReservation" class="panel-collapse collapse">
+								<div id="makeRoundTripReservationResult"></sum>
+									<div class="panel-body">
+										<form>
+											<div class="form-group">
+												<label for="makeRoundTripReservationAccountNumber">Customer Account Number</label>
+												<input type="number" class="form-control" name="makeRoundTripReservationAccountNumber" id="makeRoundTripReservationAccountNumber" placeholder="0">
+											</div>
+											<hr />
+											<div class="form-group">
+												<label for="makeRoundTripReservationFromAirline">Departure Airline Id</label>
+												<input type="text" class="form-control" name="makeRoundTripReservationFromAirline" id="makeRoundTripReservationFromAirline" placeholder="JFK">
+											</div>
+											<div class="form-group">
+												<label for="makeRoundTripReservationFromNumber">Departure Flight Number</label>
+												<input type="number" class="form-control" name="makeRoundTripReservationFromNumber" id="makeRoundTripReservationFromNumber" placeholder="0">
+											</div>
+											<div class="form-group">
+												<label for="makeRoundTripReservationFromLeg">Departure Flight Leg Number</label>
+												<input type="number" class="form-control" name="makeRoundTripReservationFromLeg" id="makeRoundTripReservationFromLeg" placeholder="0">
+											</div>
+											<div class="form-group">
+												<label for="makeRoundTripReservationToAirline">Return Airline Id</label>
+												<input type="text" class="form-control" name="makeRoundTripReservationToAirline" id="makeRoundTripReservationToAirline" placeholder="JFK">
+											</div>
+											<div class="form-group">
+												<label for="makeRoundTripReservationToNumber">Return Flight Number</label>
+												<input type="number" class="form-control" name="makeRoundTripReservationToNumber" id="makeRoundTripReservationToNumber" placeholder="0">
+											</div>
+											<div class="form-group">
+												<label for="makeRoundTripReservationToLeg">Return Flight Leg Number</label>
+												<input type="number" class="form-control" name="makeRoundTripReservationToLeg" id="makeRoundTripReservationToLeg" placeholder="0">
+											</div>
+											<hr />
+											<div class="form-group">
+												<label for="makeRoundTripReservationFromClass">Seat Class</label>
+												<input type="text" class="form-control" name="makeRoundTripReservationFromClass" id="makeRoundTripReservationFromClass" placeholder="Business">
+											</div>
+											<div class="form-group">
+												<label for="makeRoundTripReservationFromSeatNumber">Seat Number</label>
+												<input type="text" class="form-control" name="makeRoundTripReservationFromSeatNumber" id="makeRoundTripReservationFromSeatNumber" placeholder="AA000">
+											</div>
+											<!--div class="form-group">
+												<label for="makeRoundTripReservationToClass">Return Seat Class</label>
+												<input type="text" class="form-control" name="makeRoundTripReservationToClass" id="makeRoundTripReservationToClass" placeholder="Business">
+											</div>
+											<div class="form-group">
+												<label for="makeRoundTripReservationToSeatNumber">Return Seat Number</label>
+												<input type="text" class="form-control" name="makeRoundTripReservationToSeatNumber" id="makeRoundTripReservationToSeatNumber" placeholder="AA000">
+											</div-->
+											<div class="form-group">
+												<label for="makeRoundTripReservationMeal">Meal Choice</label>
+												<input type="text" class="form-control" name="makeRoundTripReservationMeal" id="makeRoundTripReservationMeal" placeholder="Beef">
+											</div>
+											<button type="button" class="btn btn-default" onClick="makeRoundTripReservation()">Submit</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+<!--*** MAKE ONE WAY TRIP RESERVATION**************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#makeOneWayTripReservation">Make One-Way Reservation</a>
+								</h4>
+							</div>
+							<div id="makeOneWayTripReservation" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div id="makeOneWayTripReservationResult"></div>
+									<form>
+										<div class="form-group">
+											<label for="makeOneWayTripReservationAccountNumber">Customer Account Number</label>
+											<input type="number" class="form-control" name="makeOneWayTripReservationAccountNumber" id="makeOneWayTripReservationAccountNumber" placeholder="0">
+										</div>
+										<hr />
+										<div class="form-group">
+											<label for="makeOneWayTripReservationAirline">Airline Id</label>
+											<input type="text" class="form-control" name="makeOneWayTripReservationAirline" id="makeOneWayTripReservationAirline" placeholder="JFK">
+										</div>
+										<div class="form-group">
+											<label for="makeOneWayTripReservationNumber">Flight Number</label>
+											<input type="number" class="form-control" name="makeOneWayTripReservationNumber" id="makeOneWayTripReservationNumber" placeholder="0">
+										</div>
+										<div class="form-group">
+											<label for="makeOneWayTripReservationLeg">Leg Number</label>
+											<input type="number" class="form-control" name="makeOneWayTripReservationLeg" id="makeOneWayTripReservationLeg" placeholder="0">
+										</div>
+										<hr />
+										<div class="form-group">
+											<label for="makeOneWayTripReservationClass">Seat Class</label>
+											<input type="text" class="form-control" name="makeOneWayTripReservationClass" id="makeOneWayTripReservationClass" placeholder="Business">
+										</div>
+										<div class="form-group">
+											<label for="makeOneWayTripReservationSeatNumber">Seat Number</label>
+											<input type="text" class="form-control" name="makeOneWayTripReservationSeatNumber" id="makeOneWayTripReservationSeatNumber" placeholder="AA000">
+										</div>
+										<div class="form-group">
+											<label for="makeOneWayTripReservationMeal">Meal Choice</label>
+											<input type="text" class="form-control" name="makeOneWayTripReservationMeal" id="makeOneWayTripReservationMeal" placeholder="Beef">
+										</div>
+										<button type="button" class="btn btn-default" onClick="makeOneWayTripReservation()">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+<!--*** ADD CUSTOMER ******************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#addCustomer">Add Customer</a>
+								</h4>
+							</div>
+							<div id="addCustomer" class="panel-collapse collapse">
+								<div class="panel-body">
+									<form id="addCustomerForm">
+										<div class="form-group">
+											<label for="addCustomerPersonFirstName">First Name</label>
+											<input type="text" class="form-control" name="addCustomerPersonFirstName" id="addCustomerPersonFirstName" placeholder="John">
+										</div>
+										<div class="form-group">
+											<label for="addCustomerPersonLastName">Last Name</label>
+											<input type="text" class="form-control" name="addCustomerPersonLastName" id="addCustomerPersonLastName" placeholder="Smith">
+										</div>
+										<div class="form-group">
+											<label for="addCustomerPersonAddress">Address</label>
+											<input type="text" class="form-control" name="addCustomerPersonAddress" id="addCustomerPersonAddress" placeholder="123 Fake St.">
+										</div>
+										<div class="form-group">
+											<label for="addCustomerPersonCity">City</label>
+											<input type="text" class="form-control" name="addCustomerPersonCity" id="addCustomerPersonCity" placeholder="New York">
+										</div>
+										<div class="form-group">
+											<label for="addCustomerPersonState">State</label>
+											<input type="text" class="form-control" name="addCustomerPersonState" id="addCustomerPersonState" placeholder="NY">
+										</div>
+										<div class="form-group">
+											<label for="addCustomerPersonZipCode">ZipCode</label>
+											<input type="text" class="form-control" name="addCustomerPersonZipCode" id="addCustomerPersonZipCode" placeholder="90210">
+										</div>
+										<hr />
+										<div class="form-group">
+											<label for="addCustomerPhoneNo">Phone Number</label>
+											<input type="text" class="form-control" name="addCustomerPhoneNo" id="addCustomerPhoneNo" placeholder="631-555-0137">
+										</div>
+										<div class="form-group">
+											<label for="addCustomerCreditCard">Credit Card</label>
+											<input type="text" class="form-control" name="addCustomerCreditCard" id="addCustomerCreditCard" placeholder="4111 1111 1111 1111">
+										</div>
+										<div class="form-group">
+											<label for="addCustomerDate">Date</label>
+											<input type="date" class="form-control" name="addCustomerDate" id="addCustomerDate" placeholder="mm/dd/yyyy">
+										</div>
+										<div class="form-group">
+											<label for="addCustomerEmail">Email</label>
+											<input type="text" class="form-control" name="addCustomerEmail" id="addCustomerEmail" placeholder="Joe.Smith@example.com">
+										</div>
+										<button type="button" class="btn btn-default" onCLick="addCustomer();">Submit</button>
+									</form>
+									<div id="addCustomerResult">
+										<!--TODO: Database fun-->
+									</div>
+								</div>
+							</div>
+						</div>
+<!--*** CHANGE CUSTOMER ******************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#changeCustomer">Change Customer</a>
+								</h4>
+							</div>
+							<div id="changeCustomer" class="panel-collapse collapse">
+								<div class="panel-body">
+									<form id="changeCustomerForm">
+										<div class="form-group">
+											<label for="changeCustomerAccountNo">Customer Account Number</label>
+											<input type="text" class="form-control" name="changeCustomerAccountNo" id="changeCustomerAccountNo" placeholder="123004567">
+										</div>
+										<hr />
+										<div class="form-group">
+											<label for="changeCustomerPhoneNo">Phone Number</label>
+											<input type="text" class="form-control" name="changeCustomerPhoneNo" id="changeCustomerPhoneNo" placeholder="631-555-0137">
+										</div>
+										<div class="form-group">
+											<label for="changeCustomerCreditCard">Credit Card</label>
+											<input type="text" class="form-control" name="changeCustomerCreditCard" id="changeCustomerCreditCard" placeholder="4111 1111 1111 1111">
+										</div>
+										<div class="form-group">
+											<label for="changeCustomerDate">Date</label>
+											<input type="date" class="form-control" name="changeCustomerDate" id="changeCustomerDate" placeholder="mm/dd/yyyy">
+										</div>
+										<div class="form-group">
+											<label for="changeCustomerEmail">Email</label>
+											<input type="text" class="form-control" name="changeCustomerEmail" id="changeCustomerEmail" placeholder="Joe.Smith@example.com">
+										</div>
+										<button type="button" class="btn btn-default" onCLick="changeCustomer();">Submit</button>
+									</form>
+									<div id="changeCustomerResult">
+										<!--TODO: Database fun-->
+									</div>
+								</div>
+							</div>
+						</div>
+<!--*** DELETE CUSTOMER ******************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#deleteCustomer">Delete Customer</a>
+								</h4>
+							</div>
+							<div id="deleteCustomer" class="panel-collapse collapse">
+								<div class="panel-body">
+									<form id="deleteCustomerForm">
+										<div class="form-group">
+											<label for="deleteCustomerAccountNo">Customer Account Number</label>
+											<input type="text" class="form-control" name="deleteCustomerAccountNo" id="deleteCustomerAccountNo" placeholder="123004567">
+										</div>
+										<button type="button" class="btn btn-default" onCLick="deleteCustomer();">Submit</button>
+									</form>
+									<div id="deleteCustomerResult">
+										<!--TODO: Database fun-->
+									</div>
+								</div>
+							</div>
+						</div>
+<!--*** GET RECOMMENDED FLIGHTS ******************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#getRecommendedFlightsByCustomer">Get Customer's Recommended Flights</a>
+								</h4>
+							</div>
+							<div id="getRecommendedFlightsByCustomer" class="panel-collapse collapse">
+								<div class="panel-body">
+									<form id="getRecommendedFlightsByCustomerForm">
+										<div class="form-group">
+											<label for="getRecommendedFlightsByCustomerAccountNo">Customer Account Number</label>
+											<input type="text" class="form-control" name="getRecommendedFlightsByCustomerAccountNo" id="getRecommendedFlightsByCustomerAccountNo" placeholder="123004567">
+										</div>
+										<button type="button" class="btn btn-default" onCLick="getRecommendedFlightsByCustomer();">Submit</button>
+									</form>
+									<div id="getRecommendedFlightsByCustomerResult">
+										<!--TODO: Database fun-->
+									</div>
+								</div>
+							</div>
+						</div>
+<!--*** GET MAILING LIST ******************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#getMailingList">Get Mailing List</a>
+								</h4>
+							</div>
+							<div id="getMailingList" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div id="getMailingListResult"></div>
+									<form id="getMailingListForm">
+										<button type="button" class="btn btn-default" onCLick="getMailingList();">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="/js/myJavasctipt.js"></script>
+		<script src="js/representative.js"></script>
+	</body>
+</html>

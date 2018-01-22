@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!--link rel="icon" href="../../../../favicon.ico"-->
+
+        <title>Customer Homepage</title>
+
+        <!-- Bootstrap core CSS -->
+        <!--link href="/305_Website/css/bootstrap.css" rel="stylesheet"-->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+
+        <link rel="stylesheet" href="../css/customer_css/tooplate-style.css">
+        <link rel="stylesheet" href="../css/customer_css/owl-carousel.css">
+
+				<style>
+					table {
+						border-collapse: collapse;
+					}
+					table, th, td {
+						border: 1px solid black;
+						padding: 5px;
+					}
+
+					.inverted{
+						filter: invert(100%);
+					}
+					.backgroundInvert{
+						background-color:black;
+					}
+				</style>
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./../index.html">Triptopia</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="./account.html">Login to view current and previous reservations</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+
+    <!-- Main menu + Book the tickets-->
+    <section class="banner" id="top">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="left-side">
+                        <div class="logo">
+                            <img src="../img/logo.png" alt="Flight Template">
+                        </div>
+                        <div class="tabs-content">
+                            <h4>Welcome to Customer Page</h4>
+                            <ul class="social-links">
+                                <li><a href="#bookTicketsDivThingId"><em>Book the tickets</em></a></li>
+                                <li><a href="#most-visited">view <em>popular</em> flights</a></li>
+                                <li><a href="#available-visited">view <em>available<em> flights</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1" id="bookTicketsDivThingId">
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <div class="submit-form">
+                                <h4>Order tickets</h4>
+                                <form id="form-submit" action="" method="get">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="from">From:</label>
+                                                <select required name='from' id="from">
+                                                    <option value="">Select a location...</option>
+                                                    <option value="ATL">Atlanta</option>
+                                                    <option value="BOS">Boston</option>
+                                                    <option value="HND">Tokyo</option>
+                                                    <option value="JFK">New York</option>
+                                                    <option value="LAX">Los Angeles</option>
+                                                    <option value="LGA">LaGuardia, New York</option>
+                                                    <option value="LHR">London</option>
+                                                    <option value="ORD">Chicago</option>
+                                                    <option value="SFO">San Francisco</option>
+                                                    <option value="TNR">Antananarivo</option>
+																										<option value="TXL">Berlin</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="to">To:</label>
+																								<select required name='from' id="to">
+                                                    <option value="">Select a location...</option>
+                                                    <option value="ATL">Atlanta</option>
+                                                    <option value="BOS">Boston</option>
+                                                    <option value="HND">Tokyo</option>
+                                                    <option value="JFK">New York</option>
+                                                    <option value="LAX">Los Angeles</option>
+                                                    <option value="LGA">LaGuardia, New York</option>
+                                                    <option value="LHR">London</option>
+                                                    <option value="ORD">Chicago</option>
+                                                    <option value="SFO">San Francisco</option>
+                                                    <option value="TNR">Antananarivo</option>
+																										<option value="TXL">Berlin</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="departure">Departure date:</label>
+                                            <input name="departure" type="date" class="form-control" id="departure" placeholder="mm/dd/yyyy" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="return">Return date:</label>
+                                            <input name="return" type="date" class="form-control" id="return" placeholder="mm/dd/yyyy">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="radio-select">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <label for="round">Round</label>
+                                                        <input type="radio" name="trip" id="round" value="round" required="required"onchange='this.form.()'>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <label for="oneway">Oneway</label>
+                                                        <input type="radio" name="trip" id="oneway" value="one-way" required="required" onchange='this.form.()' checked="checked">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <button type="button" id="form-submit" class="btn" onClick="orderTicketsNowClick()">Search Flights</button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </form>
+																<hr />
+                                <div id="bookFlightResults"></div>
+																<!--*** FORMS FOR MAKING THE RESERVATION ******************************************-->
+																<div id="makeTwoWayReservation">
+																	<form>
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationAccountNumber">Customer Account Number</label>
+																			<input type="number" class="form-control" name="makeRoundTripReservationAccountNumber" id="makeRoundTripReservationAccountNumber" placeholder="0">
+																		</div>
+																		<hr />
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationFromAirline">Departure Airline Id</label>
+																			<input type="text" class="form-control" name="makeRoundTripReservationFromAirline" id="makeRoundTripReservationFromAirline" placeholder="JFK">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationFromNumber">Departure Flight Number</label>
+																			<input type="number" class="form-control" name="makeRoundTripReservationFromNumber" id="makeRoundTripReservationFromNumber" placeholder="0">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationFromLeg">Departure Flight Leg Number</label>
+																			<input type="number" class="form-control" name="makeRoundTripReservationFromLeg" id="makeRoundTripReservationFromLeg" placeholder="0">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationToAirline">Return Airline Id</label>
+																			<input type="text" class="form-control" name="makeRoundTripReservationToAirline" id="makeRoundTripReservationToAirline" placeholder="JFK">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationToNumber">Return Flight Number</label>
+																			<input type="number" class="form-control" name="makeRoundTripReservationToNumber" id="makeRoundTripReservationToNumber" placeholder="0">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationToLeg">Return Flight Leg Number</label>
+																			<input type="number" class="form-control" name="makeRoundTripReservationToLeg" id="makeRoundTripReservationToLeg" placeholder="0">
+																		</div>
+																		<hr />
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationFromClass">Departure Seat Class</label>
+																			<input type="text" class="form-control" name="makeRoundTripReservationFromClass" id="makeRoundTripReservationFromClass" placeholder="Business">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationFromSeatNumber">Depature Seat Number</label>
+																			<input type="text" class="form-control" name="makeRoundTripReservationFromSeatNumber" id="makeRoundTripReservationFromSeatNumber" placeholder="AA000">
+																		</div>
+																		<!--div class="form-group">
+																			<label for="makeRoundTripReservationToClass">Return Seat Class</label>
+																			<input type="text" class="form-control" name="makeRoundTripReservationToClass" id="makeRoundTripReservationToClass" placeholder="Business">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationToSeatNumber">Return Seat Number</label>
+																			<input type="text" class="form-control" name="makeRoundTripReservationToSeatNumber" id="makeRoundTripReservationToSeatNumber" placeholder="AA000">
+																		</div-->
+																		<div class="form-group">
+																			<label for="makeRoundTripReservationMeal">Meal Choice</label>
+																			<input type="text" class="form-control" name="makeRoundTripReservationMeal" id="makeRoundTripReservationMeal" placeholder="Beef">
+																		</div>
+																		<button type="button" class="btn btn-default" onClick="makeRoundTripReservationCustomer()">Order Ticket Now</button>
+																	</form>
+																</div>
+																<div id="makeOneWayReservation">
+																	<form>
+																		<div class="form-group">
+																			<label for="makeOneWayTripReservationAccountNumber">Customer Account Number</label>
+																			<input type="number" class="form-control" name="makeOneWayTripReservationAccountNumber" id="makeOneWayTripReservationAccountNumber" placeholder="0">
+																		</div>
+																		<hr />
+																		<div class="form-group">
+																			<label for="makeOneWayTripReservationAirline">Airline Id</label>
+																			<input type="text" class="form-control" name="makeOneWayTripReservationAirline" id="makeOneWayTripReservationAirline" placeholder="JFK">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeOneWayTripReservationNumber">Flight Number</label>
+																			<input type="number" class="form-control" name="makeOneWayTripReservationNumber" id="makeOneWayTripReservationNumber" placeholder="0">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeOneWayTripReservationLeg">Leg Number</label>
+																			<input type="number" class="form-control" name="makeOneWayTripReservationLeg" id="makeOneWayTripReservationLeg" placeholder="0">
+																		</div>
+																		<hr />
+																		<div class="form-group">
+																			<label for="makeOneWayTripReservationClass">Seat Class</label>
+																			<input type="text" class="form-control" name="makeOneWayTripReservationClass" id="makeOneWayTripReservationClass" placeholder="Business">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeOneWayTripReservationSeatNumber">Seat Number</label>
+																			<input type="text" class="form-control" name="makeOneWayTripReservationSeatNumber" id="makeOneWayTripReservationSeatNumber" placeholder="AA000">
+																		</div>
+																		<div class="form-group">
+																			<label for="makeOneWayTripReservationMeal">Meal Choice</label>
+																			<input type="text" class="form-control" name="makeOneWayTripReservationMeal" id="makeOneWayTripReservationMeal" placeholder="Beef">
+																		</div>
+																		<button type="button" class="btn btn-default" onClick="makeOneWayTripReservationCustomer()">Order Ticket Now</button>
+																	</form>
+																</div>
+																<!--*** END FORMS FOR MAKING THE RESERVATION ******************************************-->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- for viewing available flights-->
+    <section id="available-visited">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2></h2><h2></h2><h2>Available flights</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="owl-available" class="owl-carousel owl-theme">
+
+                        <div class="item col-md-12">
+                            <div class="available-item">
+                                <img src="../img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Lorem ipsum dolor</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="available-item">
+                                <img src="../img/place-03.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Proin dignissim</h4>
+                                    <span>Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="available-item">
+                                <img src="../img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Vivamus egestas</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="available-item">
+                                <img src="../img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>River Views</h4>
+                                    <span>New York</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="available-item">
+                                <img src="../img/place-04.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>In in quam efficitur</h4>
+                                    <span>Hollywood</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="available-item">
+                                <img src="../img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Sed faucibus odio</h4>
+                                    <span>NEW YORK</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="available-item">
+                                <img src="../img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Donec varius porttitor</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- button -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" >
+            <span><br /></span>
+                <div class="page-direction-button">
+                        <a href="#" class="scroll-top"><i class="fa fa-phone"></i>Go book the flight tickets</a>
+                </div>
+                <span><br /></span>
+                <div class="page-direction-button">
+                        <a href="../index.html"><i class="fa fa-phone"></i>Go back to main page</a>
+                </div>
+                <span><br /><br /></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- for viewing most popular flights-->
+    <section id="most-visited">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2></h2><h2></h2><h2>Most Popular flights</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="owl-mostvisited" class="owl-carousel owl-theme">
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>River Views</h4>
+                                    <span>New York</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Lorem ipsum dolor</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-03.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Proin dignissim</h4>
+                                    <span>Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-04.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Fusce sed ipsum</h4>
+                                    <span>Hollywood</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Vivamus egestas</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Aliquam elit metus</h4>
+                                    <span>New York</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-03.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Phasellus pharetra</h4>
+                                    <span>Paris</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-04.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>In in quam efficitur</h4>
+                                    <span>Hollywood</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-01.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Sed faucibus odio</h4>
+                                    <span>NEW YORK</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="../img/place-02.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Donec varius porttitor</h4>
+                                    <span>Tokyo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- button -->
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12" >
+
+                    <div class="page-direction-button">
+                            <a href="#" class="scroll-top"><i class="fa fa-phone"></i>Go book the flight tickets</a>
+                    </div>
+                    <span><br /></span>
+                    <div class="page-direction-button">
+                            <a href="../index.html"><i class="fa fa-phone"></i>Go back to main page</a>
+                    </div>
+                    <span><br /><br /></span>
+                </div>
+            </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Copyright &copy; 2017 Triptopia
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+				<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="../js/customer_js/vendor/bootstrap.min.js"></script>
+        <script src="/js/myJavasctipt.js"></script>
+        <script src="../js/customer_js/datepicker.js"></script>
+        <script src="../js/customer_js/plugins.js"></script>
+        <script src="../js/customer_js/main.js"></script>
+
+
+
+    </body>
+</html>

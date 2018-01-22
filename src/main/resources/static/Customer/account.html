@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!--link rel="icon" href="../../../../favicon.ico"-->
+
+		<title>User Page</title>
+
+		<!-- Bootstrap core CSS -->
+		<!--link href="/305_Website/css/bootstrap.css" rel="stylesheet"-->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			html {
+				overflow-y: scroll;
+			}
+
+			body {
+				padding-top: 6rem;
+			}
+			table {
+				border-collapse: collapse;
+			}
+			table, th, td {
+				border: 1px solid black;
+				padding: 5px;
+			}
+
+			.inverted{
+				filter: invert(100%);
+			}
+			.backgroundInvert{
+				background-color:black;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button-->
+					<a class="navbar-brand" href="/index.html">Triptopia</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#" onClick="$('#largeOuterContainer').toggleClass('inverted');$('body').toggleClass('backgroundInvert');">Toggle Night Mode</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+		<div class="container" id="largeOuterContainer">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<form>
+						<div class="form-group">
+							<label for="accountNo">Account Number</label>
+							<input type="number" name="accountNo" id="accountNo" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" name="password" id="password" class="form-control"/>
+						</div>
+						<button type="button" class="btn" onClick="loggedIn()"> Submit</button>
+						<div id="loginResult"></div>
+					</form>
+					<div class="panel-group" id="accordianRestOfThePage">
+<!--***** GET CURRENT RESERVATIONs **************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordianRestOfThePage" href="#getCurrentReservations">Get current reservations</a>
+								</h4>
+							</div>
+							<div id="getCurrentReservations" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div id="getCurrentReservationsResult">
+									</div>
+									<form>
+										<button type="button" class="btn btn-default" onClick="getCurrentReservations()">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+<!--***** GET ALL RESERVATIONs **************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordianRestOfThePage" href="#getAllReservations">Get All reservations</a>
+								</h4>
+							</div>
+							<div id="getAllReservations" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div id="getAllReservationsResult">
+									</div>
+									<form>
+										<button type="button" class="btn btn-default" onClick="getAllReservations()">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+<!--*** GET RECOMMENDED FLIGHTS ******************************************-->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordianRestOfThePage" href="#getRecommendedFlights">Get Recommended Flights</a>
+								</h4>
+							</div>
+							<div id="getRecommendedFlights" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div id="getRecommendedFlightsResult"></div>
+									<form id="getRecommendedFlightsForm">
+										<button type="button" class="btn btn-default" onCLick="getRecommendedFlights();">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<script src="../js/customer_js/vendor/bootstrap.min.js"></script>
+		<script src="/js/myJavasctipt.js"></script>
+		<script src="../js/customer_js/account.js"></script>
+		<!--script src="../js/customer_js/datepicker.js"></script>
+		<script src="../js/customer_js/plugins.js"></script>
+		<script src="../js/customer_js/main.js"></script-->
+	</body>
+</html>
