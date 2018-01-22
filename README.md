@@ -1,4 +1,4 @@
-# Personal Shell Implementation
+# flight booking system
 ### Team Project (Kyeongsoo Kim, Muhammad Islam, and John Martin.) August 2017 ~ December 2017
 ## 1.Introduction
 We have designed and implemented a relational database system to support the operations of an online travel reservation system, such as Skyscanner, Expedia, and etc. We aimed to have full functionality and features of online travel reservation system, considering client’s side, and manager’s side. The basic idea behind this system is that it allows customers to use the web to browse and search the contents of the database and make flight reservations on the website as well as it allows users to query the database for available flights. The systems provides many functionality that is provided in general travel reservation website. Especially, like Reverse auction sites such as Priceline and Expedia, it supports special function(reverse auctions), in which individuals specify the price they are willing to pay for a seat and the airlines either agree to sell it at that price or not. 
