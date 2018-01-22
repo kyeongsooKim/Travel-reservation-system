@@ -22,3 +22,10 @@ When it comes to programming language, framework and library, we used HTML/CSS, 
 
 ## 5. E-R diagram
 ![](image/e-r_diagram.jpg)
+
+
+## 6. SQL code for Relational Model & Integrity constraints
+[Click here](https://docs.google.com/document/d/1UjFRVbAqo0FVsSCqzy_RnfwY2Lss_6c869Vfr5Tkc9E/edit)
+
+## 7. SQL code for transaction.
+[Click here](https://docs.google.com/document/d/1pgCdt1u5C4iEhEGzBpYeJT2287er8EniSpsjl6CWhi4/edit)
